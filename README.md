@@ -1,9 +1,10 @@
-# Marshmallow-Engine v0.0.0.0 (Bare Win32)
+# Marshmallow-Engine v0.0.0.1 (Bare Win32)
 
-Полноэкранное приложение без `<windows.h>` и без CRT. Обрабатывает только самое важное: полноэкранный режим сверху всех окон и закрытие по **Esc**.
+Полноэкранное приложение без `<windows.h>` и без CRT. Только полноэкранный режим поверх всех окон и выход по Esc.
 
 ## Сборка
 ```bash
-clang -O3 -m64 -nostartfiles -fno-asynchronous-unwind-tables -fno-exceptions \
-  -Wl,-s -Wl,-subsystem,windows \
-  main.c -luser32 -o Marshmallow-Engine.exe
+clang -O3 -m64 -ffunction-sections -fdata-sections \
+  -fno-stack-protector -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-exceptions \
+  -nostartfiles -Wl,-s -Wl,--gc-sections -Wl,-subsystem,windows -Wl,-e,WinMainCRTStartup \
+  src/main.c -luser32 -o Marshmallow-Engine.exe
