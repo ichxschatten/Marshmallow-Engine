@@ -1,3 +1,3 @@
-#include "../libs/AetherBlade.h"
+#include "../libs/Marshmallow-Engine-Core/ME.h"
 
-AE_Run(L"Marshmallow-Engine-v0.0.0.1", L"Marshmallow-Engine-v0.0.0.1");
+ME_RUN_D3D9(L"Marshmallow-Engine-v0.0.0.2",L"Marshmallow-Engine-v0.0.0.2",ME_COLOR(16,24,32));
