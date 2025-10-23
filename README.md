@@ -6,4 +6,4 @@
 ```bash
 clang -O3 -m64 -nostartfiles -fno-asynchronous-unwind-tables -fno-exceptions \
   -Wl,-s -Wl,-subsystem,windows \
-  main.c -luser32 -o MarshmallowEngine.exe
+  main.c -luser32 -o Marshmallow-Engine.exe
